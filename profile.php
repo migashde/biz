@@ -86,12 +86,17 @@
                   $selected = '';
                 }
               }
+
+$per1 = substr($row["personal_id"], 0, 1);
+$per2 = substr($row["personal_id"], 1, 1);
+$per3 = substr($row["personal_id"], 2, 8);
               echo '</select>
             <span id="proft" class="wtext"></span>
         </div>
         <div class="form-group">
           <label for="name">Регистрийн дугаар:</label>
           <select name="personal1" class="form-c form-personal" id="personal1">
+              <option value="'.$per1.'" selected>'.$per1.'</option>
               <option value="А">А</option>
               <option value="Б">Б</option>
               <option value="В">В</option>
@@ -129,6 +134,7 @@
               <option value="Я">Я</option>
             </select>
             <select name="personal2" class="form-c form-personal" id="personal2">
+              <option value="'.$per2.'" selected>'.$per2.'</option>
               <option value="А">А</option>
               <option value="Б">Б</option>
               <option value="В">В</option>
@@ -165,7 +171,7 @@
               <option value="Ю">Ю</option>
               <option value="Я">Я</option>
             </select>
-          <input type="number" id="personal" class="form-c form-personaler" name="personal_id" placeholder="Регистрийн дугаараа энд бичнэ үү" value="'.$row['personal_id'].'">
+          <input type="number" id="personal" class="form-c form-personaler" name="personal_id" placeholder="Регистрийн дугаараа энд бичнэ үү" value="'.$per3.'">
             <span id="personalt" class="wtext"></span>
             <span id="personalt2"></span>
         </div>

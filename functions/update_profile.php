@@ -7,6 +7,8 @@ require_once "db.php";
   $huis = $_POST['huis'];
   $birthday = $_POST['birthday'];
   $prof = $_POST['prof'];
+  $personal1 = $_POST['personal1'];
+  $personal2 = $_POST['personal2'];
   $personal_id = $_POST['personal_id'];
   $phone = $_POST['phone'];
   $email = trim(htmlspecialchars($_POST['email']));
@@ -51,7 +53,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           } else {
 
 
-            $sql = "UPDATE users SET family_name = '".$family_name."', name = '".$name."', huis = '".$huis."', birthday = '".$birthday."', prof_id = '".$prof."', personal_id = '".$personal_id."', phone = '".$phone."', email = '".$email."', address = '".$address."', driver_license = '".$driver_license."' WHERE id = ".trim($_POST['id']).";";
+            $sql = "UPDATE users SET family_name = '".$family_name."', name = '".$name."', huis = '".$huis."', birthday = '".$birthday."', prof_id = '".$prof."', personal_id = '".$personal1.$personal2.$personal_id."', phone = '".$phone."', email = '".$email."', address = '".$address."', driver_license = '".$driver_license."' WHERE id = ".trim($_POST['id']).";";
 
             if ($connection->query($sql) === TRUE) {
                 session_start();
